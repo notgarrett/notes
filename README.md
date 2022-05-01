@@ -1,0 +1,2 @@
+# notes
+Cummulation of school
