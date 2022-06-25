@@ -1,0 +1,178 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{parskip}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{,--,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{,--,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Data Structues 1.1}
+\author{Garrett Giles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\section*{What is a Data Structure?}
+\text{A data structure (DS) is a way of organizing data so that it can be used effectively.}
+\subsection*{Why Data Structures?}
+\begin{text}
+	They are essential ingreatients in creating fast and powerful algorithms. \\
+	They help to manage and organize data. \\
+	They make code cleaner and easier to understand.
+\end{text}
+
+\section*{Abstract Data Types vs. Data Structures.}
+
+
+\subsection*{Abstract Data Type}
+\begin{text}
+	An abstract data type (ADT) is an abstraction of a
+	data structure which provides only the interface to which a
+	data structure must adhere to. \\
+	The interface does not give any specific details about
+	how something should be implemented or in what programming language.
+\end{text}
+\begin{table}[htbp]
+	\caption{Examples}
+	\label{tab:}
+	\begin{center}
+		\begin{tabular}[c]{l|l}
+			\hline
+			\multicolumn{1}{c|}{\textbf{Abstraction (ADT)}} &
+			\multicolumn{1}{c}{\textbf{Implementation (DS)}}                                                          \\
+			\hline
+			List                                            & Dynamic Array Linked List                               \\
+			\hline
+			Queue                                           & Linked List based, Array Based Queue, Stack based Queue \\
+			\hline
+			Map                                             & Tree Map, Hash Map / Hash Table                         \\
+			\hline
+			Vehicle                                         & Golf Cart, Bicycle, Smart Car                           \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\section*{Computational Complexity Analysis}
+\subsection*{Complexity Analysis}
+\begin{text}
+	As programmers, we often find outselves asking the same two questions over and over again: \\
+	How much time does this algorithm need to finish? \\
+	How much space does this algorithm need for its computation?
+\end{text}
+\subsection*{Big-O Notation}
+\begin{text}
+	Big-O Notation gives and upper bound of the complexity in the worst case, helping to quantify performance as the input size becomes arbitrarily large.
+
+\end{text}
+
+\text{n - The size of the input}
+
+\begin{table}[htbp]
+	\caption{Complexities ordered in from smallest to largest.}
+	\label{tab:second}
+	\begin{center}
+		\begin{tabular}[c]{l|l}
+			\hline
+			\multicolumn{1}{c|}{\textbf{Term}} &
+			\multicolumn{1}{c}{\textbf{Notation}}                \\
+			\hline
+			Constant Time                      & $O(1)$          \\
+			\hline
+			Logarithmic Time                   & $O(log(n))$     \\
+			\hline
+			Linear Time                        & $O(n)$          \\
+			\hline
+			Linearithmic Time                  & $O(nlog(n))$    \\
+			\hline
+			Quadric Time                       & $On^2$          \\
+			\hline
+			Cubic Time                         & $O(n^3)$        \\
+			\hline
+			Exponential Time                   & $O(b^n), b > 1$ \\
+			\hline
+			Factorial Time                     & $O(n!)$         \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection*{Big-O Properties}
+\[ \mathbf{
+		O(n+c) = O(n)
+	}\]
+\[
+	\mathbf{
+		O(cn) = O(n), c > 0}
+	\vspace{1em}
+\]
+
+\begin{text}
+	Let f be a function that describes the running times of a particular algorithm for an input size of n:
+
+\end{text}
+
+\[
+	\mathbf{
+		f(n) = 7log(n)^3 + 15n^2 + 2n^3 + 8
+	}
+\]
+\[
+	\mathbf{
+		O(f(n)) = O(n^3)
+	}
+\]
+\subsection*{Big-O Examples}
+
+\end{document}
+
+
