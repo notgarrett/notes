@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2022.4.30)  16 JUL 2022 11:23
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2022.4.30)  20 JUL 2022 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**abstract_data_types.ltx
-(./abstract_data_types.ltx
+**static_and_dynamic_arrays.ltx
+(./static_and_dynamic_arrays.ltx
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-04-10> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -688,8 +688,8 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 \c@theorem=\count343
 \c@definition=\count344
 \c@problem=\count345
- (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.colorbrewer.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex)) (./abstract_data_types.aux)
-\openout1 = `abstract_data_types.aux'.
+ (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.colorbrewer.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex)) (./static_and_dynamic_arrays.aux)
+\openout1 = `static_and_dynamic_arrays.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
 LaTeX Font Info:    ... okay on input line 64.
@@ -758,14 +758,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4] (./abstract_data_types.aux) ) 
+] [2] (./static_and_dynamic_arrays.aux) ) 
 Here is how much of TeX's memory you used:
- 29973 strings out of 476156
- 752935 string characters out of 5814963
- 1408370 words of memory out of 5000000
- 50223 multiletter control sequences out of 15000+600000
- 481201 words of font info for 81 fonts, out of 8000000 for 9000
+ 29964 strings out of 476156
+ 752836 string characters out of 5814963
+ 1407382 words of memory out of 5000000
+ 50218 multiletter control sequences out of 15000+600000
+ 481185 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,12n,103p,730b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,9n,103p,736b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abstract_data_types.xdv (4 pages, 38844 bytes).
+Output written on static_and_dynamic_arrays.xdv (2 pages, 24144 bytes).

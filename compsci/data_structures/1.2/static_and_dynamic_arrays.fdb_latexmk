@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1657985003 "abstract_data_types.xdv" "abstract_data_types.pdf" "abstract_data_types" 1657985003
-  "abstract_data_types.xdv" 1657985003 38844 d829002bcb5ed15769cf9a41effeec73 "xelatex"
+["xdvipdfmx"] 1658346893 "static_and_dynamic_arrays.xdv" "static_and_dynamic_arrays.pdf" "static_and_dynamic_arrays" 1658346893
+  "static_and_dynamic_arrays.xdv" 1658346893 24144 d3ed3696b044c217f0403a9b7b53697b "xelatex"
   (generated)
-  "abstract_data_types.pdf"
-["xelatex"] 1657985002 "abstract_data_types.ltx" "abstract_data_types.xdv" "abstract_data_types" 1657985003
+  "static_and_dynamic_arrays.pdf"
+["xelatex"] 1658346892 "static_and_dynamic_arrays.ltx" "static_and_dynamic_arrays.xdv" "static_and_dynamic_arrays" 1658346893
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1650183167 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1650183167 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -212,9 +212,9 @@
   "/usr/share/texmf-dist/tex/latex/zref/zref-base.sty" 1650181202 20785 71a3d72ab517959a6979c27e6176bec1 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1651375153 5825183 4e9eb2845fca6f2f3884e9c1aa9bdbd6 ""
-  "abstract_data_types.aux" 1657985003 1423 a50684c724eef853ad96cc2d94bf9bce "xelatex"
-  "abstract_data_types.ltx" 1657985001 8747 278cf9182add230352a24e6bc29dc3bf ""
+  "static_and_dynamic_arrays.aux" 1658346893 240 60616b545ba4f73e7bdd5979d8dda99b "xelatex"
+  "static_and_dynamic_arrays.ltx" 1658346891 6280 e9c3775b6c83a86109d26abfee482696 ""
   (generated)
-  "abstract_data_types.aux"
-  "abstract_data_types.log"
-  "abstract_data_types.xdv"
+  "static_and_dynamic_arrays.aux"
+  "static_and_dynamic_arrays.log"
+  "static_and_dynamic_arrays.xdv"

@@ -1,8 +1,8 @@
-PWD /home/garrett/notes/compsci/data_structures/1.1
+PWD /home/garrett/notes/compsci/data_structures/1.2
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/xetex/xelatex.fmt
-INPUT abstract_data_types.ltx
-OUTPUT abstract_data_types.log
+INPUT static_and_dynamic_arrays.ltx
+OUTPUT static_and_dynamic_arrays.log
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
@@ -907,10 +907,10 @@ INPUT /usr/share/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.colorbrewer.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarycolorbrewer.code.tex
-INPUT ./abstract_data_types.aux
-INPUT abstract_data_types.aux
-INPUT abstract_data_types.aux
-OUTPUT abstract_data_types.aux
+INPUT ./static_and_dynamic_arrays.aux
+INPUT static_and_dynamic_arrays.aux
+INPUT static_and_dynamic_arrays.aux
+OUTPUT static_and_dynamic_arrays.aux
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
@@ -969,5 +969,5 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-OUTPUT abstract_data_types.xdv
-INPUT abstract_data_types.aux
+OUTPUT static_and_dynamic_arrays.xdv
+INPUT static_and_dynamic_arrays.aux

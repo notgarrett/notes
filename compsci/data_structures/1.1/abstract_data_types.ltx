@@ -18,6 +18,8 @@
 \usepackage{psfrag}
 \usepackage{pgfplots}
 \usepackage{bm}
+\usepackage[ruled, longend]{algorithm2e}
+\usepackage{algpseudocode}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Other Settings
@@ -64,23 +66,19 @@
 \section*{What is a Data Structure?}
 \text{A data structure (DS) is a way of organizing data so that it can be used effectively.}
 \subsection*{Why Data Structures?}
-\begin{text}
 	They are essential ingreatients in creating fast and powerful algorithms. \\
 	They help to manage and organize data. \\
 	They make code cleaner and easier to understand.
-\end{text}
 
 \section*{Abstract Data Types vs. Data Structures.}
 
 
 \subsection*{Abstract Data Type}
-\begin{text}
 	An abstract data type (ADT) is an abstraction of a
 	data structure which provides only the interface to which a
 	data structure must adhere to. \\
 	The interface does not give any specific details about
 	how something should be implemented or in what programming language.
-\end{text}
 \begin{table}[htbp]
 	\caption{Examples}
 	\label{tab:}
@@ -104,16 +102,12 @@
 
 \section*{Computational Complexity Analysis}
 \subsection*{Complexity Analysis}
-\begin{text}
 	As programmers, we often find outselves asking the same two questions over and over again: \\
 	How much time does this algorithm need to finish? \\
 	How much space does this algorithm need for its computation?
-\end{text}
 \subsection*{Big-O Notation}
-\begin{text}
 	Big-O Notation gives and upper bound of the complexity in the worst case, helping to quantify performance as the input size becomes arbitrarily large.
 
-\end{text}
 
 \text{n - The size of the input}
 
@@ -156,10 +150,7 @@
 	\vspace{1em}
 \]
 
-\begin{text}
-	Let f be a function that describes the running times of a particular algorithm for an input size of n:
-
-\end{text}
+Let f be a function that describes the running times of a particular algorithm for an input size of n:
 
 \[
 	\mathbf{
@@ -172,7 +163,89 @@
 	}
 \]
 \subsection*{Big-O Examples}
+The following run in constant time: O(1)  
+\begin{algorithm}
+ $ a := 1 $\\
+ $ b := 2 $\\
+ $ c := a + 5*b $\\
+ $ i := 0 $\\
+ \While{$ i < 11 $ }{
+  $i = i + 1$
+ } 
+
+ \caption{The following run in constant time: O(1)}
+\end{algorithm} 
+
+\begin{algorithm}[H]
+  $ i := 0 $ \\
+  \While{$ i < n $}{ 
+    i = i + 1 \tcp*{$f(n) = n)$ \\ $O(f(n)) = O(n)$} 
+  } 
+  \caption{The following run in linear time: $O(n)$}
+\end{algorithm} 
+
+\begin{algorithm}
+ $i := 0$ \\
+ \While{$ i < n $ }{
+ $ i = i + 3$ \tcp*{$f(n) = n/3$ \\ $O(f(n)) = O(n)$}}
+ \caption{The following run in linear time: $O(n)$}
+\end{algorithm}
+
+Both of the following run in quadratic time. The first may be ovvious since n work done n times is $n*n = O(n^2)$, but what about the second one? 
+
+\begin{algorithm}[H]
+  \For{$i := 0 ; i < n ; i = i + 1$}{
+  \For {$ j := 0 ; j < n ; j = j + 1$}{
+}}
+\caption{$f(n) = n*n = n^2, O(f(n)) = O(n^2)$}
+\end{algorithm}
+
+\begin{algorithm}[H]
+  \For{$i := 0 ; i < n ; i = i + 1$}{
+    \For{j := i ; j < n; j = j + 1}{
+    }
+  }
+  \caption{Here, 0 in the second loop is changed into \bf{i}}
+
+\end{algorithm}
+
+
+For a moment just focus on the second loop. Since i goes form [0,n) the amount of looping done is directly determined by what i is. Remark that if $\mathbf{i=0}$, we do n work, if $i=1$, we do $n-1$ work, if $i=2$, we do $n-2$ work, etc\dots \\
+So the question then becomes what is: $(n) + (n-1) + (n-2) + (n-3) + \dots + 3 + 2 + 1$? Remakably this turns out to be $n(n+1)/2$, so $O(n(n+1)/2) = O(n^2/2 + n/2) = O(n^2)$ \\
+Suppose we have a sorted array and we want to find the index of a particular value in the array, if it exists. What is the time complexity of the following algorithmm? 
+\\
+\begin{algorithm}[H]
+  low := 0 \\
+  high := n-1 \\
+  \While{low <= high}{
+  mid := (low + high) / 2 \\
+  \uIf{array[mid] == value}{return mid}
+  \uElseIf{array[mid] < value}{low = mid + 1}
+  \uElseIf{array[mid] > value}{high = mid - 1}
+  return -1 \Comment{value not found}
+  \caption{Answer: $O(log2(n)) = O(log(n))$}
+}
+
+\end{algorithm}
+\begin{table}[htbp]
+  \caption{Big-O common examples}
+  \label{tab3}
+  \begin{center}
+    \begin{tabular}[c]{l|l}
+      \hline
+      \multicolumn{1}{c|}{\textbf{}} & 
+      \multicolumn{1}{c}{\textbf{}} \\
+      \hline
+      Finding all the subsets of a set & $O(2^n)$ \\
+      Finding all permutations of a string & $O(n!)$ \\
+      Sorting using mergsort & $O(nlog(n))$ \\
+      Iterating over all the cells in a matrix of size n by m & $O(nm)$ \\
+      
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
 
 \end{document}
-
 

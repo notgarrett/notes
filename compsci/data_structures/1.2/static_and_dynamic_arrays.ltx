@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{parskip}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage[ruled, longend]{algorithm2e}
+\usepackage{algpseudocode}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{,--,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{,--,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Static and Dynamic Arrays}
+\author{Garrett Giles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\section*{Outline}
+\begin{itemize}
+	\item Discussion and examples about Arrays
+		      {\begin{itemize}
+
+				      \item What is an Array?
+				      \item When and where is a Array used?
+				      \item Complexity
+				      \item Static array usage examples
+			      \end{itemize}}
+	\item Dynamic Array implementation details
+	\item Code Implementation
+\end{itemize}
+\section*{\center{What is a static Array?}}
+A static array is a fixed length container containing n elements indexable from the range [0, n-1]. \\
+Q: What is meant by being 'indexable'? \\
+A: This means that each slot/index in the array can be referenced with a number.
+\section*{\center{When and where is a static Array used?}}
+\begin{enumerate}
+	\item Storing and accesing sequential data
+	\item Temporarily storing object
+	\item Using by IO routines as buffers
+	\item Lookup table and inverse lookup tables
+	\item Can be used to return multiple values from a function
+	\item Used in dynamic programming to cache answers to subproblems
+\end{enumerate}
+
+\begin{table}[htbp]
+	\caption{Complexity}
+	\label{tab:}
+	\begin{center}
+		\begin{tabular}[c]{l|l|l}
+			\hline
+			\multicolumn{1}{c|}{\textbf{}}             &
+			\multicolumn{1}{c|}{\textbf{Static Array}} &
+			\multicolumn{1}{c}{\textbf{Dynamic Array}}               \\
+			\hline
+			Access                                     & O(1) & O(1) \\
+			\hline
+			Search                                     & O(n) & O(n) \\
+			\hline
+			Insertion                                  & N/A  & O(n) \\
+			\hline
+			Appending                                  & N/A  & O(1) \\
+			\hline
+			Deletion                                   & N/A  & O(n) \\
+
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\section*{\center{Static Array}}
+\[A =
+  \begin{array}{|c|c|c|c|c|}
+    \hline
+    44 & 12 & -5 & 17 & 6 \\
+  \hline
+    0 & 1 & 2 & 3 & 4 \\
+  \hline
+\end{array}
+\]
+Elements in A are referenced by their index. There is no other way to acces elements in an array. Array indexing is zero-based, meaning the first element is found in position zero. 
+\section*{Operations on Dynamic Arrays}
+\subsection*{Dynamic Array}
+The dynamic array can grow and shrink in size. \\
+A = [34, 4]\\ 
+A.add(34) => A = [34, 4, 34] \\
+Q: How can we implement a dynamic array? \\
+A: One way is to use a static array!
+{\begin{enumerate}
+  \item Create a static array with an initial capacity. 
+  \item Add elements to the underlying static array, keeping track of the number of elements. 
+  \item If adding another element will exceed the capacity, then create a new static array with twice the capacity and copy the original elements into it.
+\end{enumerate}}
+
+Suppose we create a dynamic array with an initial capacity of two and then mbegin adding elements to it. 
+  
+\[\begin{array}{|c|c|}
+  \hline
+  \empty & \empty \\
+  \hline
+\end{array}
+=> 
+\begin{array}{|c|c|}
+  \hline
+  7 & \empty \\
+  \hline
+\end{array}
+=>
+\begin{array}{|c|c|c|c|}
+  \hline
+  7 & -9 & 3 & \empty \\
+  \hline
+\end{array}
+=> 
+\begin{array}{|c|c|c|c|}
+  \hline
+  7 & -9 & 3 & 12 \\
+  \hline
+\end{array}
+\]
+\center{
+Note the array will double when overflow occurs\dots
+}
+\section*{\center{Source code link}}
+Implementation source code and tests can all be found at the following link: \\
+\center{github.com/williamifset/data-structures}
+
+\end{document}
